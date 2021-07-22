@@ -14,9 +14,29 @@ class Base
 
 		Base(int grad, int min, int seg)
 		{
-			grados = grad;
-			minutos = min;
-			segundos = seg;
+			if (grad < 0 || grad > 359)
+			{
+				grados = grad;
+			}else
+			{
+				grados = 0;
+			}
+
+			if (min < 0 || min > 59)
+			{
+				minutos = min;
+			}else
+			{
+				minutos = 0;
+			}
+
+			if (seg < 0 || seg > 59)
+			{
+				segundos = seg;
+			}else
+			{
+				segundos = 0;
+			}
 		}
 
 		Base operator+(Base b)
